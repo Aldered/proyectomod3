@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+#UNAM-CERT
+
+import urllib
+import requests
+#import html2text
+
+top = ['https://www.unam.mx/',
+'http://www.gaceta.unam.mx/',
+'http://www.posgrado.unam.mx/',
+'http://oferta.unam.mx/',
+'http://dgenp.unam.mx/',
+'http://www.unamglobal.unam.mx/',
+'http://www.dgcs.unam.mx/',
+'http://www.revista.unam.mx/',
+'http://www.unamenlinea.unam.mx/']
+
+
+def activas_top():
+        for i in top:
+                request = requests.get(i)
+                if request.status_code == 200:
+                        for di in top:
+                                rsp = requests.get(di, stream=True)
+                                ip_port = rsp.raw._fp.fp.raw._sock.get$
+                                print (ip_port)
+                                html = urllib.request.urlopen(di)
+                                print (html.read())
+#               print (urllib.request.urlopen(i).getcode())
+
+activas_top()
